@@ -16,6 +16,7 @@ const Header: React.FC = () => {
       <div className="text-2xl font-bold text-white">
         FlyBase
       </div>
+
       <div className="flex items-center gap-6">
 
         <button className="bg-green-600 hover:bg-green-700 text-white font-semibold text-sm py-2 px-4 rounded-lg flex items-center space-x-2">
