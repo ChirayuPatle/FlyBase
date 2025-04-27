@@ -22,7 +22,6 @@ const projects: Project[] = [
     date: '2025-04-20',
     time: '09:45 AM',
   },
-  // Add more projects as needed
 ];
 
 const Overview: React.FC = () => {

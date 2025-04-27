@@ -16,7 +16,6 @@ const HamburgerMenu: React.FC = () => {
         <span>☰</span>
       </button>
       <div className="hidden lg:flex flex-col border-r-[1px] border-gray-600 text-white p-4 w-64 h-screen">
-        {/* Project Accordion */}
         <div>
           <button
             onClick={toggleProject}
@@ -39,7 +38,6 @@ const HamburgerMenu: React.FC = () => {
           )}
         </div>
 
-        {/* Manage Accordion */}
         <div className="mt-4">
           <button
             onClick={toggleManage}

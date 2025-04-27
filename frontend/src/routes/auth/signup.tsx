@@ -4,13 +4,11 @@ import { Link } from "react-router-dom";
 const SignUpPage: React.FC = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Handle sign-up logic here
   };
 
   return (
     <div className="text-white min-h-screen flex flex-col items-center justify-center">
 
-      {/* Sign Up Form */}
       <div className="w-full max-w-sm text-center">
         <h1 className="text-2xl font-semibold mb-6">Create your FlyBase account</h1>
 
@@ -36,7 +34,6 @@ const SignUpPage: React.FC = () => {
             className="bg-neutral-900 border border-neutral-700 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
 
-          {/* Sign Up Button */}
           <Link to='/dashboard'>
           <button
             type="submit"
