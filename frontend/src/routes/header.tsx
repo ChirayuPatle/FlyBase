@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Bell, BellOff, HelpCircle, ChevronDown } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Header: React.FC = () => {
   const [notificationsEnabled, setNotificationsEnabled] = useState<boolean>(true);
@@ -18,10 +19,12 @@ const Header: React.FC = () => {
       </div>
       <div className="flex items-center gap-6">
 
-        <button className="bg-green-600 hover:bg-green-700 text-white font-semibold text-sm py-2 px-4 rounded-lg flex items-center space-x-2">
+        <Link to='deploy'>
+        <button className="text-white font-semibold text-sm py-2 px-4 border-[1.5px] border-dashed border-white rounded-lg flex items-center space-x-2">
           <span>Create</span>
                <ChevronDown size={16} className="text-white" />
         </button>
+        </Link>
 
         <div></div>
 
