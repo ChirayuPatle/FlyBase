@@ -22,7 +22,6 @@ const Setting: React.FC = () => {
 
   return (
     <div className="min-h-screen w-[1280px] flex flex-col text-white">
-      {/* Header */}
       <div className="border-b border-black py-6 px-8 sticky top-0 z-10">
         <h1 className="text-3xl font-bold">Setting</h1>
         <p className="text-gray-400 text-sm mt-1">
@@ -30,9 +29,7 @@ const Setting: React.FC = () => {
         </p>
       </div>
 
-      {/* Main Content */}
       <div className="flex-1 w-full max-w-6xl mx-auto p-8 space-y-8 grid grid-cols-1 md:grid-cols-3 gap-8">
-        {/* Project Information Card */}
         <div className="border-2 h-80 border-black rounded-lg p-6 space-y-5">
           <h2 className="text-xl font-semibold">Project Information</h2>
           <div className="flex flex-col gap-2">
@@ -49,7 +46,6 @@ const Setting: React.FC = () => {
           </div>
         </div>
 
-        {/* Visibility Card */}
         <div className="border-2 h-80 border-black rounded-lg p-6 space-y-5">
           <h2 className="text-xl font-semibold">Visibility</h2>
           <div className="flex gap-4">
@@ -69,11 +65,9 @@ const Setting: React.FC = () => {
           </div>
         </div>
 
-        {/* Advanced Setting Card */}
         <div className="border-2 h-80 border-black rounded-lg p-6 space-y-5">
           <h2 className="text-xl font-semibold">Advanced Setting</h2>
 
-          {/* Auto Deploy Toggle */}
           <div className="flex justify-between items-center py-3 border-b border-gray-700">
             <div>
               <p className="font-medium">Auto Deploy</p>
@@ -93,7 +87,6 @@ const Setting: React.FC = () => {
             </button>
           </div>
 
-          {/* Notifications Toggle */}
           <div className="flex justify-between items-center py-3">
             <div>
               <p className="font-medium">Email Notifications</p>
@@ -115,7 +108,6 @@ const Setting: React.FC = () => {
         </div>
       </div>
 
-      {/* Footer Actions */}
       <div className="border-t-2  border-black py-6 px-8 flex justify-between sticky bottom-0">
         <button
           onClick={handleSaveChanges}
