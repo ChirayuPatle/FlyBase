@@ -44,7 +44,6 @@ const Storage: React.FC = () => {
   return (
     <div className="min-h-screen p-10 flex flex-col items-center">
       <div className="w-full max-w-6xl">
-        {/* Header */}
         <div className="flex justify-between items-center mb-8">
           <h1 className="text-3xl font-bold text-white">Storage Management</h1>
           <button
@@ -54,7 +53,6 @@ const Storage: React.FC = () => {
             <Upload size={20} />
             Upload Files
           </button>
-          {/* Hidden File Input */}
           <input
             ref={fileInputRef}
             type="file"
@@ -64,7 +62,6 @@ const Storage: React.FC = () => {
           />
         </div>
 
-        {/* Storage Bar */}
         <div className="mb-10">
           <div className="w-full bg-gray-200 rounded-full h-4 overflow-hidden">
             <div
@@ -77,7 +74,6 @@ const Storage: React.FC = () => {
           </p>
         </div>
 
-        {/* Files Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {files.length > 0 ? (
             files.map((file, index) => (
