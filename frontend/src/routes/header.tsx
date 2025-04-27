@@ -11,11 +11,25 @@ const Header: React.FC = () => {
   const userName = "Chirayu Patle";
   const profileImage = "https://i.pravatar.cc/40?img=3";
 
+import { useState } from 'react';
+import { Bell, BellOff, HelpCircle, ChevronDown } from 'lucide-react';
+
+const Header: React.FC = () => {
+  const [notificationsEnabled, setNotificationsEnabled] = useState<boolean>(true);
+
+  const toggleNotifications = (): void => {
+    setNotificationsEnabled((prev) => !prev);
+  };
+
+  const userName = "Chirayu Patle";
+  const profileImage = "https://i.pravatar.cc/40?img=3";
+
   return (
 <header className="flex items-center justify-between border-b px-5 border-neutral-700 h-16 bg-none backdrop-blur-lg">
       <div className="text-2xl font-bold text-white">
         FlyBase
       </div>
+
       <div className="flex items-center gap-6">
 
         <button className="bg-green-600 hover:bg-green-700 text-white font-semibold text-sm py-2 px-4 rounded-lg flex items-center space-x-2">
