@@ -22,9 +22,6 @@ const CTA = () => {
             <button className="px-8 py-3 bg-gradient-to-r from-purple-600 to-purple-800 rounded-lg font-medium hover:from-purple-700 hover:to-purple-900 transition-all transform hover:scale-105">
               Get Started
             </button>
-            <button className="px-8 py-3 border border-gray-700 rounded-lg font-medium hover:bg-gray-900 transition-all transform hover:scale-105">
-              Contact Sales
-            </button>
           </div>
         </motion.div>
       </div>
