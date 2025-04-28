@@ -10,6 +10,7 @@ import Overview from './routes/dashboard/overview';
 import Storage from './routes/dashboard/storage';
 import Domain from './routes/dashboard/domain';
 import Setting from './routes/dashboard/setting';
+import NavFeature from './components/navFeature';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -18,6 +19,7 @@ const router = createBrowserRouter(
       <Route path='/' element={<LandingPage />} />
       <Route path='/login' element={<LoginPage />} />
       <Route path='/signup' element={<SignUpPage />} />
+      <Route path='/navfeature' element={<NavFeature />} />
 
       {/* Dashboard Routes (Protected/Nested) */}
       <Route path='/dashboard' element={<Dashboard />}>

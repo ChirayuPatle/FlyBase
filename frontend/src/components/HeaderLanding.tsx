@@ -17,17 +17,19 @@ const HeaderLanding = () => {
         </motion.div>
 
         <nav className="hidden md:flex space-x-8">
-          {["Features", "Documentation"].map((item) => (
-            <motion.a
-              key={item}
-              href="#"
-              whileHover={{ scale: 1.05, color: "#a855f7" }}
-              className="text-gray-300 hover:text-purple-400 transition-colors"
-            >
-              {item}
-            </motion.a>
-          ))}
-        </nav>
+      <Link
+        to="/navfeature"
+        className="text-gray-300 hover:text-purple-400 transition-colors"
+      >
+        Features
+      </Link>
+      <Link
+        to="#"
+        className="text-gray-300 hover:text-purple-400 transition-colors"
+      >
+        Documentation
+      </Link>
+    </nav>
 
         <div className="flex space-x-4">
           <Link to='/login'>
