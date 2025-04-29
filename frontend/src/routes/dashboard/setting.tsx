@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Trash2, Save, RefreshCw } from 'lucide-react';
+import { Trash2, Save, RefreshCw, Terminal } from 'lucide-react';
+import { Alert, AlertDescription, AlertTitle } from '../../components/ui/alert';
 
 const Setting: React.FC = () => {
   const [projectName, setProjectName] = useState('my-awesome-project');
@@ -8,14 +9,28 @@ const Setting: React.FC = () => {
   const [autoDeploy, setAutoDeploy] = useState(false);
   const [deleting, setDeleting] = useState(false);
 
+  const [alertVisible, setAlertVisible] = useState(false);
+  const [alertContent, setAlertContent] = useState({
+    title: '',
+    description: '',
+    type: 'info' as 'info' | 'success' | 'error',
+  });
+
+  const showAlert = (title: string, description: string, type: 'info' | 'success' | 'error') => {
+    setAlertContent({ title, description, type });
+    setAlertVisible(true);
+    setTimeout(() => setAlertVisible(false), 3000);
+  };
+
   const handleSaveChanges = () => {
-    alert('Setting saved successfully ✅');
+    showAlert('Settings Saved!', 'Your project settings have been successfully saved.');
   };
 
   const handleDeleteProject = () => {
     setDeleting(true);
+    showAlert('Deleting Project...', 'Your project will be deleted shortly.');
     setTimeout(() => {
-      alert('Project deleted ❌');
+      showAlert('Project Deleted ❌', `Project "${projectName}" has been deleted.`, 'error');
       setDeleting(false);
     }, 1500);
   };
@@ -108,7 +123,7 @@ const Setting: React.FC = () => {
         </div>
       </div>
 
-      <div className="border-t-2  border-black py-6 px-8 flex justify-between sticky bottom-0">
+      <div className="border-t-2 border-black py-6 px-8 flex justify-between sticky bottom-0">
         <button
           onClick={handleSaveChanges}
           className="flex items-center gap-2 border border-green-600 text-green-400 hover:bg-green-600 hover:text-white py-2 px-6 rounded-md transition"
@@ -135,6 +150,16 @@ const Setting: React.FC = () => {
           )}
         </button>
       </div>
+
+      {alertVisible && (
+        <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 w-full max-w-md z-50">
+          <Alert variant={alertContent.type}>
+            <Terminal className="h-4 w-4" />
+            <AlertTitle>{alertContent.title}</AlertTitle>
+            <AlertDescription>{alertContent.description}</AlertDescription>
+          </Alert>
+        </div>
+      )}
     </div>
   );
 };
