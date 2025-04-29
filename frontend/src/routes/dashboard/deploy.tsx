@@ -43,7 +43,6 @@ const Deploy: React.FC = () => {
         throw new Error("Deployment ID or URL missing from response");
       }
 
-      // Set the deployment URL
       setDeploymentUrl(deploymentUrl || `http://localhost:8080/site/${deploymentId}`);
 
       toast.success('Project deployed successfully!', {
@@ -63,10 +62,10 @@ const Deploy: React.FC = () => {
   };
 
   return (
-    <div className="p-6 sm:p-8 mx-auto mt-6 sm:mt-10 max-w-3xl bg-gray-900 rounded-lg shadow-xl overflow-hidden">
-      <h1 className="text-xl sm:text-2xl font-semibold text-white mb-6 sm:mb-8">Create New Project</h1>
+    <div className="p-4 sm:p-8 mx-auto md:mt-16 h-fit sm:mt-6 max-w-5xl border-[1.5px] rounded-lg shadow-xl">
+      <h1 className="text-xl sm:text-2xl font-semibold text-white mb-4 sm:mb-6">Create New Project</h1>
 
-      <div className="space-y-6 sm:space-y-8">
+      <div className="space-y-4 sm:space-y-6">
         {/* Project Name */}
         <div>
           <label htmlFor="projectName" className="block text-sm font-medium text-gray-300 mb-2">
@@ -100,7 +99,7 @@ const Deploy: React.FC = () => {
               placeholder="https://github.com/username/repo"
             />
           </div>
-          <p className="mt-2 text-xs text-gray-400">We'll clone and deploy your repository.</p>
+          <p className="mt-1 text-xs text-gray-400">We'll clone and deploy your repository.</p>
         </div>
 
         {/* Environment Select */}
@@ -121,7 +120,7 @@ const Deploy: React.FC = () => {
         </div>
 
         {/* Deploy Button */}
-        <div className="pt-4">
+        <div className="pt-2">
           <button
             disabled={loading}
             onClick={handleSubmit}
@@ -145,7 +144,7 @@ const Deploy: React.FC = () => {
 
         {/* Deployment URL Display */}
         {deploymentUrl && (
-          <div className="mt-6 p-4 bg-green-900 rounded-lg text-green-200 flex flex-col items-center">
+          <div className="mt-4 p-4 bg-green-900 rounded-lg text-green-200 flex flex-col items-center">
             <p className="text-sm mb-2">🚀 Your project is deployed successfully!</p>
             <a
               href={deploymentUrl}
